@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: vmoul
- * Date: 16/06/2017
- * Time: 17:07
- */
 
 namespace Core\Controller;
 require_once "vendor/autoload.php";

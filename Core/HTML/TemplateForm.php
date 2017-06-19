@@ -15,7 +15,7 @@ class TemplateForm extends Form{
         } elseif ($type === 'hidden') {
             return '<input type="' . $type . '" name="' . $name . '" value="' . $label . '">';
         } else{
-            $input = '<input type="' . $type . '" name="' . $name . '" value="' . $name . '" class="form-control"  '. $required .'>';
+            $input = '<input type="' . $type . '" name="' . $name . '" class="form-control"  '. $required .'>';
         }
         $label = '<label>' . $label . '</label>';
         return $this->surround($label . $input);

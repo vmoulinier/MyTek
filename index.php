@@ -7,6 +7,7 @@ require_once 'Core/Autoload.php';
 
 define('ROOT', dirname(str_replace('\\', '/', __DIR__)));
 define('PATH', 'http://localhost/mytek');
+
 App\Autoloader::register();
 Core\Autoloader::register();
 

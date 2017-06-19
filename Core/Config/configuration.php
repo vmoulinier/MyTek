@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: vmoul
- * Date: 16/06/2017
- * Time: 15:32
- */
 
 require_once "vendor/autoload.php";
 
