@@ -2,8 +2,8 @@
 /**
  * Created by PhpStorm.
  * User: vmoul
- * Date: 16/06/2017
- * Time: 16:13
+ * Date: 21/06/2017
+ * Time: 00:28
  */
 
 namespace App\Entity;
@@ -57,5 +57,4 @@ class Test
         $this->nom = $nom;
     }
 
-    
 }

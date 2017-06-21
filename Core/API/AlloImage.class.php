@@ -429,5 +429,15 @@
 
             return AlloHelper::$_lastError;
         }
+
+        /**
+         * @return string
+         */
+        public function getImagePath()
+        {
+            return "http://".$this->imageHost."/".$this->imagePath;
+        }
+
+
     }
 

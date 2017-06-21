@@ -17,3 +17,7 @@
 .bold {
     font-weight: bold;
 }
+
+.glyphicon.glyphicon-heart.active {
+    color : #ac2925;
+}

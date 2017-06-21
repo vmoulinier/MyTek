@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>ProjetSecu</title>
+    <title>MyTek</title>
     <link href="<?= PATH ?>/Public/css/bootstrap.css" rel="stylesheet">
     <link href="<?= PATH ?>/Public/css/styles.css" rel="stylesheet">
     <script src="<?= PATH ?>/Public/js/jquery-2.2.4.js"></script>
@@ -27,6 +27,12 @@
                 <ul class="nav navbar-nav">
                     <?php if(\App\Model\UserRepository::logged()): ?>
                         <li><a href="<?= PATH ?>/recherche/index">Rechercher</a></li>
+                    <?php endif ?>
+                    <?php if(\App\Model\UserRepository::logged()): ?>
+                        <li><a href="<?= PATH ?>/recherche/index">Groupes</a></li>
+                    <?php endif ?>
+                    <?php if(\App\Model\UserRepository::logged()): ?>
+                        <li><a href="<?= PATH ?>/mediatheque/index">Ma médiathèque</a></li>
                     <?php endif ?>
                     <?php if(\App\Model\UserRepository::loggedAdmin()): ?>
                         <li><a href="<?= PATH ?>/admin/index">Admin</a></li>

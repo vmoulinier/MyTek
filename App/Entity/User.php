@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use App\Model\SPDO;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * @Entity @Table(name="user")
@@ -44,10 +45,16 @@ class User
      * @var string
      */
     private $email;
+
+    /**
+     * @OneToMany(targetEntity="Mediatheque", mappedBy="user")
+     * @JoinColumn(nullable=true)
+     */
+    private $mediatheque;
     
     public function __construct()
     {
-        
+        $this->mediatheque = new ArrayCollection();
     }
     
     /**
@@ -144,6 +151,22 @@ class User
     public function setPassword($password)
     {
         $this->password = $password;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getMediatheque()
+    {
+        return $this->mediatheque;
+    }
+
+    /**
+     * @param mixed $mediatheque
+     */
+    public function setMediatheque(Mediatheque $mediatheque)
+    {
+        $this->mediatheque = $mediatheque;
     }
     
 }
