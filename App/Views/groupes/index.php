@@ -1,0 +1,1 @@
+<h2 class="center">Page groupes</h2>

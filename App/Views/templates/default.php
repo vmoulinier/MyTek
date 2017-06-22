@@ -6,7 +6,7 @@
     <meta name="author" content="">
     <title>MyTek</title>
     <link href="<?= PATH ?>/Public/css/bootstrap.css" rel="stylesheet">
-    <link href="<?= PATH ?>/Public/css/styles.css" rel="stylesheet">
+    <link href="<?= PATH ?>/Public/css/styles.css?v=<?=time();?>" rel="stylesheet">
     <script src="<?= PATH ?>/Public/js/jquery-2.2.4.js"></script>
     <script src="<?= PATH ?>/Public/js/bootstrap.js"></script>
     </head>
@@ -29,7 +29,7 @@
                         <li><a href="<?= PATH ?>/recherche/index">Rechercher</a></li>
                     <?php endif ?>
                     <?php if(\App\Model\UserRepository::logged()): ?>
-                        <li><a href="<?= PATH ?>/recherche/index">Groupes</a></li>
+                        <li><a href="<?= PATH ?>/groupes/index">Groupes</a></li>
                     <?php endif ?>
                     <?php if(\App\Model\UserRepository::logged()): ?>
                         <li><a href="<?= PATH ?>/mediatheque/index">Ma médiathèque</a></li>
@@ -49,7 +49,7 @@
             </div><!--/.nav-collapse -->
         </div><!--/.container-fluid -->
     </nav>
-    <h2 class="center">Template défaut</h2>
+    <br >
     <?php echo $content; ?>
 </div>
 </body>

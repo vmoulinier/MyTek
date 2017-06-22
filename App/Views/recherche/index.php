@@ -1,5 +1,5 @@
 <h2 class="center">Page recherche</h2>
-
+<br />
 <div class="row">
     <div class="col-sm-4 col-sm-offset-4">
         <form method="post">
@@ -20,12 +20,12 @@
                     <?php foreach ($user->getMediatheque() as $usermovie):?>
                         <?php if($usermovie->getCodeFilm() == $movie->code): ?>
                             <?php $fav = 1; ?>
-                            <span data-id="<?= $movie->code; ?>" style="font-size: 1.4em; float:right;" id="add" class="delete glyphicon glyphicon-heart active" aria-hidden="true"></span>
+                            <div class="hover-fav"><span data-id="<?= $movie->code; ?>" style="font-size: 1.4em; float:right;" id="add" class="delete glyphicon glyphicon-heart active" aria-hidden="true"></span></div>
                             <?php break; ?>
                         <?php endif; ?>
                     <?php endforeach; ?>
                     <?php if($fav == 0): ?>
-                        <span data-id="<?= $movie->code; ?>" style="font-size: 1.4em; float:right;" id="del" class="add glyphicon glyphicon-heart" aria-hidden="true"></span>
+                    <div class="hover-fav"><span data-id="<?= $movie->code; ?>" style="font-size: 1.4em; float:right;" id="del" class="add glyphicon glyphicon-heart" aria-hidden="true"></span></div>
                     <?php endif; ?>
                 </div>
                 <div class="panel-body">

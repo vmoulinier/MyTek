@@ -1,9 +1,13 @@
 <?php
 
+use Core\Controller\DoctrineORM;
 use Doctrine\ORM\Tools\Console\ConsoleRunner;
 
 // replace with file to your own project bootstrap
-require_once 'Core/Config/configuration.php';
+require_once 'Core/Controller/DoctrineORM.php';
+
+$orm = new DoctrineORM();
+$entityManager = $orm->getEntityManager();
 
 return ConsoleRunner::createHelperSet($entityManager);
 

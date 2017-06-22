@@ -1,10 +1,11 @@
 <h2 class="center">Page mediatheque</h2>
+<br />
 <?php if(isset($movies)): ?>
         <?php foreach ($movies as $movie): ?>
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <?= utf8_encode($movie->title); ?>
-                    <span data-id="<?= $movie->code; ?>" style="font-size: 1.4em; float:right;" id="del" class="delete glyphicon glyphicon-heart active" aria-hidden="true"></span>
+                    <div class="hover-fav"><span data-id="<?= $movie->code; ?>" style="font-size: 1.4em; float:right;" id="del" class="delete glyphicon glyphicon-heart active" aria-hidden="true"></span></div>
                 </div>
                 <div class="panel-body">
                     <table>

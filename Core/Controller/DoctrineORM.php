@@ -24,5 +24,12 @@ class DoctrineORM
         $this->entityManager = \Doctrine\ORM\EntityManager::create($databaseParams, $config);
     }
 
+    /**
+     * @return \Doctrine\ORM\EntityManager
+     */
+    public function getEntityManager()
+    {
+        return $this->entityManager;
+    }
 
 }
