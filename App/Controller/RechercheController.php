@@ -25,7 +25,7 @@ class RechercheController extends Controller
         {
             $id = $_POST['id_add'];
 
-            $exist = $this->entityManager->getRepository('App\Entity\Mediatheque')->findOneBy(array('code_film' => $id));
+            $exist = $this->entityManager->getRepository('App\Entity\Mediatheque')->findOneBy(array('code_film' => $id, 'user' => $user));
             if($exist) {
                 $this->entityManager->remove($exist);
                 $this->entityManager->flush();
@@ -41,7 +41,7 @@ class RechercheController extends Controller
         if(isset($_POST['id_del']))
         {
             $id = $_POST['id_del'];
-            $exist = $this->entityManager->getRepository('App\Entity\Mediatheque')->findOneBy(array('code_film' => $id));
+            $exist = $this->entityManager->getRepository('App\Entity\Mediatheque')->findOneBy(array('code_film' => $id, 'user' => $user));
             if(!$exist) {
                 $mediatheque = new Mediatheque();
                 $mediatheque->setCodeFilm($id);
@@ -50,7 +50,7 @@ class RechercheController extends Controller
                 $this->entityManager->flush();
                 return;
             }
-            $mediatheque = $this->entityManager->getRepository('App\Entity\Mediatheque')->findOneBy(array('code_film' => $id));
+            $mediatheque = $this->entityManager->getRepository('App\Entity\Mediatheque')->findOneBy(array('code_film' => $id, 'user' => $user));
             $this->entityManager->remove($mediatheque);
             $this->entityManager->flush();
         }

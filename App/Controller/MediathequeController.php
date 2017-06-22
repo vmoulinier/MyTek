@@ -2,16 +2,18 @@
 
 namespace App\Controller;
 
-
+use App\Entity\Mediatheque;
 use Core\Controller\Controller;
+use App\Entity\User;
 
 class MediathequeController extends Controller
 {
 
     public function index() {
         $user = $this->getCurrentUser();
-        $usersmovies = $this->entityManager->getRepository('App\Entity\Mediatheque')->findAll();
+        $usersmovies = $this->entityManager->getRepository('App\Entity\mediatheque')->findBy(array('user' => $user));
         $movies = array();
+
         if(!empty($usersmovies)) {
             foreach ($usersmovies as $key => $usermovie) {
                 $code_film = $usermovie->getCodeFilm();
@@ -32,7 +34,7 @@ class MediathequeController extends Controller
         if(isset($_POST['id_del']))
         {
             $id = $_POST['id_del'];
-            $exist = $this->entityManager->getRepository('App\Entity\Mediatheque')->findOneBy(array('code_film' => $id));
+            $exist = $this->entityManager->getRepository('App\Entity\Mediatheque')->findOneBy(array('code_film' => $id, 'user' => $user));
             if(!$exist) {
                 $mediatheque = new Mediatheque();
                 $mediatheque->setCodeFilm($id);
@@ -45,7 +47,7 @@ class MediathequeController extends Controller
             $this->entityManager->remove($mediatheque);
             $this->entityManager->flush();
         }
-        
+
         $this->template = 'default';
         $this->render('mediatheque/index', compact('movies'));
     }

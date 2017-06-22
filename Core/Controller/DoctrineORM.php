@@ -14,7 +14,7 @@ class DoctrineORM
      */
     public function __construct(){
         $entityPath = array("App/Entity");
-        $config = \Doctrine\ORM\Tools\Setup::createAnnotationMetadataConfiguration($entityPath, false);
+        $config = \Doctrine\ORM\Tools\Setup::createAnnotationMetadataConfiguration($entityPath, true);
         $databaseParams = array(
             'driver'   => 'pdo_mysql',
             'user'     => 'root',
