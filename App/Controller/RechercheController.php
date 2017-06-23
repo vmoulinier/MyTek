@@ -1,21 +1,23 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: vmoul
- * Date: 19/06/2017
- * Time: 02:17
- */
 
 namespace App\Controller;
 
-
 use App\Entity\Mediatheque;
-use App\Entity\Test;
+use App\Model\UserRepository;
 use Core\Controller\Controller;
 use Core\HTML\TemplateForm;
 
 class RechercheController extends Controller
 {
+    public function __construct()
+    {
+        parent::__construct();
+        $userrepo = new UserRepository();
+        if(!$userrepo->islogged()){
+            $this->denied();
+        }
+    }
+
     public function index() {
 
         $form = new TemplateForm($_POST);

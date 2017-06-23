@@ -69,6 +69,9 @@ class UserController extends Controller
         if(!$userrepo->islogged()){
             $this->denied();
         }
+
+        $user = $this->getCurrentUser();
+        
         $this->render('user/profil', compact('user'));
     }
 }

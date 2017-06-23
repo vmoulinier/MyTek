@@ -37,6 +37,9 @@
                     <?php if(\App\Model\UserRepository::loggedAdmin()): ?>
                         <li><a href="<?= PATH ?>/admin/index">Admin</a></li>
                     <?php endif ?>
+                    <?php if(\App\Model\UserRepository::logged()): ?>
+                        <li><a href="<?= PATH ?>/user/profil">Profil</a></li>
+                    <?php endif ?>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <?php if(\App\Model\UserRepository::logged()): ?>

@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: vmoul
- * Date: 21/06/2017
- * Time: 00:09
- */
 
 namespace App\Entity;
 
@@ -31,6 +25,14 @@ class Mediatheque
      * @JoinColumn(name="user_id", referencedColumnName="id")
      */
     protected $user;
+
+    /**
+     *
+     * @ManyToOne(targetEntity="Groupe", inversedBy="mediatheque", cascade={"persist", "merge"})
+     * @JoinColumn(name="groupe_id", referencedColumnName="id")
+     */
+    protected $groupe;
+
 
     /**
      * @return mixed
@@ -80,6 +82,20 @@ class Mediatheque
         $this->user = $user;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getGroupe()
+    {
+        return $this->groupe;
+    }
 
+    /**
+     * @param mixed $groupe
+     */
+    public function setGroupe($groupe)
+    {
+        $this->groupe = $groupe;
+    }
 
 }

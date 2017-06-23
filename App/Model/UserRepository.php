@@ -14,14 +14,6 @@ use Core\Controller\DoctrineORM;
 
 class UserRepository extends DoctrineORM
 {
-
-    public function getUserId(){
-        if($this->islogged()){
-            return $_SESSION['user_id'];
-        }
-        return false;
-    }
-
     public function register($email, $password, $password_verif, $nom, $prenom) {
         $users = $this->entityManager->getRepository('App\Entity\User')->findOneBy(array('email' => $email));
         if($users == null) {

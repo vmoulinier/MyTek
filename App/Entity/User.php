@@ -51,10 +51,18 @@ class User
      * @JoinColumn(nullable=true)
      */
     private $mediatheque;
+
+    /**
+     *
+     * @ManyToOne(targetEntity="Groupe", inversedBy="user", cascade={"persist", "merge"})
+     * @JoinColumn(name="groupe_id", referencedColumnName="id")
+     */
+    private $groupe;
     
     public function __construct()
     {
         $this->mediatheque = new ArrayCollection();
+        $this->groupe = new ArrayCollection();
     }
     
     /**
@@ -168,5 +176,20 @@ class User
     {
         $this->mediatheque = $mediatheque;
     }
-    
+
+    /**
+     * @return mixed
+     */
+    public function getGroupe()
+    {
+        return $this->groupe;
+    }
+
+    /**
+     * @param mixed $groupe
+     */
+    public function setGroupe($groupe)
+    {
+        $this->groupe = $groupe;
+    }
 }
